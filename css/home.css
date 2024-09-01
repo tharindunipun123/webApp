@@ -1,0 +1,15 @@
+body {
+    background-color: #1a1a1a;
+    color: #d4af37;
+    font-family: Arial, sans-serif;
+}
+
+.card-custom {
+    background-color: #e2a03b;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.card-custom .card-body {
+    color: #d4af37;
+}

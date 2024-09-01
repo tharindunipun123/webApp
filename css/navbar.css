@@ -1,0 +1,42 @@
+body {
+    padding-bottom: 60px; /* Ensure space for bottom navbar */
+}
+
+/* Bottom Navigation Bar */
+.navbar-dark {
+    background-color: #333333;
+    height: 60px;
+    border-top-left-radius: 20px; /* Rounded top corners */
+    border-top-right-radius: 20px; /* Rounded top corners */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for modern effect */
+}
+
+.navbar-dark .nav-link {
+    color: #d4af37;
+    font-size: 14px; /* Adjusted for modern, clean look */
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-dark .nav-link:hover {
+    color: #b08d57;
+}
+
+.navbar-dark .nav-link i {
+    font-size: 24px; /* Slightly larger icons for modern feel */
+    margin-bottom: 2px; /* Space between icon and text */
+}
+
+.navbar-dark .nav-link span {
+    font-size: 12px;
+}
+
+/* Add smooth transitions for hover effects */
+.navbar-dark .nav-link,
+.navbar-dark .nav-link i,
+.navbar-dark .nav-link span {
+    transition: color 0.3s ease;
+}
