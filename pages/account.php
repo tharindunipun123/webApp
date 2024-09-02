@@ -10,8 +10,21 @@
         </div>
     </div>
     <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action">Referral Code: koinmetricsusa</a>
-        <a href="#" class="list-group-item list-group-item-action">Edit Profile</a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <i class="bi bi-share-fill"></i> Share
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <i class="bi bi-pencil-square"></i> Edit Profile
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <i class="bi bi-card-checklist"></i> KYC
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <i class="bi bi-box-arrow-right"></i> Logout
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <i class="bi bi-trash-fill"></i> Delete Account
+        </a>
         <!-- More Options Here -->
     </div>
 </div>

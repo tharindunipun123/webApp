@@ -4,12 +4,79 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Profile Image and Welcome Message */
+.profile-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.profile-img {
+    width: 50px; /* Circular Image Size */
+    height: 50px;
+    border-radius: 50%; /* Circular shape */
+    border: 3px solid #d4af37;
+    flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.welcome-message {
+    margin-left: 15px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome-message p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.welcome-message h5 {
+    margin: 0;
+    font-size: 16px;
+    word-wrap: break-word; /* Ensure email wraps if too long */
+}
+
+/* Data Section */
+.text-container {
+    margin-top: 40px; /* Added space between the profile section and balance */
+    text-align: center;
+}
+
 .card-custom {
-    background-color: #e2a03b;
+    background-color: #6d4d1c;
     border: none;
     margin-bottom: 10px;
+    border-radius: 10px; /* Optional: Add some rounding to the card corners */
 }
 
 .card-custom .card-body {
     color: #d4af37;
+}
+
+.w-100 {
+    color: white;
+    text-align: left;
+}
+
+.friends {
+    margin-left: 10%;
+    margin-top: 20px;
+    color: white;
+}
+
+.p {
+    color: white;
+}
+
+.p1 {
+    margin-top: 5px;
+    color: white;
+}
+
+.h4 {
+    color: white;
 }

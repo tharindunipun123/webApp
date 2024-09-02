@@ -3,16 +3,18 @@ body {
 }
 
 /* Bottom Navigation Bar */
-.navbar-dark {
-    background-color: #333333;
-    height: 60px;
+.navbar {
+    background-color: #bd9c41;
+    height: 80px;
     border-top-left-radius: 20px; /* Rounded top corners */
     border-top-right-radius: 20px; /* Rounded top corners */
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for modern effect */
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .navbar-dark .nav-link {
-    color: #d4af37;
+    color: #000000;
     font-size: 14px; /* Adjusted for modern, clean look */
     padding: 5px 10px;
     display: flex;
@@ -22,7 +24,7 @@ body {
 }
 
 .navbar-dark .nav-link:hover {
-    color: #b08d57;
+    color: #fafafa;
 }
 
 .navbar-dark .nav-link i {
