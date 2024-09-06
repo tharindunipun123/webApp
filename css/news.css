@@ -6,7 +6,7 @@ body {
 .list-group-item {
     background-color: #af8d47; /* Gold color for the card */
     border: none;
-    color: #d4af37;
+    color: #ffffff;
     margin-bottom: 15px;
     padding: 20px;
     border-radius: 15px; /* Rounded corners */
@@ -16,6 +16,21 @@ body {
 .list-group-item:hover {
     background-color: #b08d57;
     color: #fff;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    background-color: #bd9c41;
+    color: white;
+    margin-bottom: 20px; /* Adds spacing below the title */
+}
+
+.title h3 {
+    margin: 0; /* Removes default margin from the heading */
+    padding: 0; /* Ensures no extra space around the text */
 }
 
 .card-title {
@@ -59,8 +74,14 @@ body {
 .btn-dark {
     background-color: #333333;
     color: #f1e3b8;
-    border-radius: 10px;
+    border-radius: 4px;
+
 }
+.btn-dark.active {
+    background-color: #d4ab2e;
+    color: #1a1a1a;
+}
+ 
 
 .btn-warning {
     background-color: #f1e3b8;

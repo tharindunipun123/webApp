@@ -50,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script async src="https://telegram.org/js/telegram-widget.js?15" data-telegram-login="BothWebAppTestBot" data-size="large" data-auth-url="http://localhost/webapp/telegram_login.php" data-request-access="write"></script>
 </head>
 <body>
     <div class="container mt-5">
@@ -66,5 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit" class="btn btn-primary mt-3">Login or Create Account</button>
         </form>
     </div>
+    <script async src="https://telegram.org/js/telegram-widget.js?19"
+            data-telegram-login="BothWebAppTestBot" 
+            data-size="large"
+            data-auth-url="telegram_login.php"
+            data-request-access="write"></script>
 </body>
 </html>

@@ -1,35 +1,28 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start(); // Start the session only if it hasn't already been started
-} // Assuming you're using session to manage login
-
-// Connect to the database (assuming you have the connection file ready)
-include './db_connect.php'; // Change the path to your actual database connection file
-
-// Check if user is logged in
+session_start();
 if (!isset($_SESSION['user_id'])) {
     echo "Please log in to access this page.";
     exit;
 }
 
+include './db_connect.php'; // Connect to the database
+
 // Get user details
 $user_id = $_SESSION['user_id'];
-$query = "SELECT name, balance, referral_code FROM users WHERE id = '$user_id'";
+$query = "SELECT name, balance, referral_code, telegram_photo_url FROM users WHERE id = '$user_id'";
 $result = mysqli_query($conn, $query);
 $user = mysqli_fetch_assoc($result);
-
 ?>
 
 <script>
     var userId = '<?php echo $_SESSION['user_id']; ?>'; // Set the user_id from PHP to JavaScript
 </script>
 
-
-<script src="ajax.js"></script> 
 <link rel="stylesheet" href="css/home.css">
+
 <div class="container mt-3">
     <div class="profile-container">
-        <img src="" class="rounded-circle" alt="Avatar" />
+        <img src="<?php echo $user['telegram_photo_url']; ?>" class="rounded-circle" alt="Avatar" /> <!-- Display Telegram profile photo -->
         <div class="welcome-message">
             <p>Welcome,</p>
             <h5><?php echo $user['name']; ?></h5> <!-- Display the user's name dynamically -->
@@ -39,18 +32,18 @@ $user = mysqli_fetch_assoc($result);
     <div class="data text-container">
         <h4 class="h4">Current Balance</h4>
         <h1 class="display-4"><?php echo $user['balance']; ?> BOTH</h1> <!-- Display the user's balance dynamically -->
-        <p class="p">Earning rate +20.00 both/hr</p>
+        <p class="p">Earning rate +20.00 BOTH/hr</p>
     </div>
 
     <div class="card card-custom">
         <div class="card-body d-flex justify-content-between align-items-center">
-            <a href="#" class="btn button-custom w-100 d-flex align-items-center justify-content-between">
-                <span><i class="bi bi-clipboard-check"></i> Referral Code: <?php echo $user['referral_code']; ?></span> <!-- Show referral code -->
-                <i class="bi bi-clipboard" style="font-size: 1.2rem;"></i>
+            <a href="#" class="btn button-custom w-100 d-flex align-items-center justify-content-between" id="copy-referral">
+                <span><i class="bi bi-clipboard-check"></i> Referral Code: <span id="referral-code"><?php echo $user['referral_code']; ?></span></span>
+                <i class="bi bi-clipboard" id="clipboard-icon" style="font-size: 1.2rem;"></i>
             </a>
         </div>
     </div>
-    
+
     <div class="friends">
         <h2>Friends</h2>
         <?php
@@ -70,3 +63,22 @@ $user = mysqli_fetch_assoc($result);
         ?>
     </div>
 </div>
+
+
+<script>
+// Clipboard Copy Functionality
+document.getElementById('clipboard-icon').addEventListener('click', function() {
+    // Get the referral code text
+    var referralCode = document.getElementById('referral-code').innerText;
+    
+    // Copy the referral code to the clipboard
+    navigator.clipboard.writeText(referralCode).then(function() {
+        // Success alert
+        alert("Referral code copied to clipboard: " + referralCode);
+    }).catch(function(error) {
+        // Error alert
+        alert("Failed to copy referral code.");
+        console.error("Clipboard error:", error);
+    });
+});
+</script>
