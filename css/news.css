@@ -1,33 +1,91 @@
 body {
     background-color: #1a1a1a;
-
     font-family: Arial, sans-serif;
-} 
+}
 
 .list-group-item {
-    background-color: #333333;
+    background-color: #af8d47; /* Gold color for the card */
     border: none;
     color: #d4af37;
-    margin-bottom: 22px;
-    height: 50px;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .list-group-item:hover {
     background-color: #b08d57;
     color: #fff;
 }
-.title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 45px;
-    background-color: #bd9c41;
-    color: white;
-    margin-bottom: 20px; /* Adds spacing below the title */
+
+.card-title {
+    color: #f1e3b8; /* Light color for the title */
+    font-weight: bold;
 }
 
-.title h3 {
-    margin: 0; /* Removes default margin from the heading */
-    padding: 0; /* Ensures no extra space around the text */
+.card-subtitle {
+    color: #f1e3b8; /* Light color for the subtitle */
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.code-input {
+    width: 100%;  /* Adjust width for better visibility */
+    background-color: #1a1a1a; /* Dark background for the input */
+    color: #f1e3b8; /* Light color for the input text */
+    border: 2px solid #f1e3b8; /* Matching border color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px;  /* Add padding for better readability */
+    font-size: 16px;  /* Increase font size for clarity */
+}
+
+.btn-reward {
+    background-color: #f1e3b8; /* Light color for the button */
+    color: #1a1a1a; /* Dark text color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the button */
+}
+
+.btn-reward:hover {
+    background-color: #d4af37;
+    color: #fff;
+}
+
+/* Navigation Buttons */
+.btn-dark {
+    background-color: #333333;
+    color: #f1e3b8;
+    border-radius: 10px;
+}
+
+.btn-warning {
+    background-color: #f1e3b8;
+    color: #333333;
+    border-radius: 10px;
+}
+
+.btn-warning.active {
+    background-color: #d4af37;
+    color: #1a1a1a;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .input-group {
+        /* flex-direction: column;
+        align-items: stretch; */
+    }
+
+    .code-input,
+    .btn-reward {
+        margin-bottom: 10px;
+    }
+
+    .btn-reward {
+        width: 100%;
+    }
 }
